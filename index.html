@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enlaces y contacto de RRick Sanchez">
+    <meta name="theme-color" content="#2980b9">
+    <title>RRick Sanchez - Enlaces</title>
+    <link rel="preload" href="tu-imagen-de-fondo.jpg" as="image">
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary-color: #2980b9;
+            --primary-hover: #3498db;
+            --text-color: #333;
+            --text-secondary: #555;
+            --heading-color: #2c3e50;
+            --bg-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: url('tu-imagen-de-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex; /* Cambiado a flex para centrar */
+            align-items: center; /* Centra verticalmente */
+            justify-content: center; /* Centra horizontalmente */
+            padding: 1rem; /* Espaciado alrededor del contenedor */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+        padding: 1.5rem; /* Disminuye un poco el padding */
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px; /* Reduce ligeramente el ancho máximo */
+        margin: 1rem;
+
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+            text-align: center;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        .profile p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .link:hover, .link:focus {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .payment-section {
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .crypto-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Alinea las tarjetas en columnas */
+            justify-items: center; /* Centra las tarjetas dentro de las columnas */
+        }
+
+        .crypto-card {
+            background: var(--bg-light);
+            padding: 0.5rem; /* Similar al padding de .link */
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem; /* Ajusta el espacio entre elementos */
+            width: 100%;
+            max-width: 500px; /* Igual que .container */
+        }
+
+        .crypto-label {
+            font-weight: bold;
+            color: var(--heading-color);
+            font-size: 0.8rem; /* Aumenta el tamaño de la etiqueta */
+            text-align: left; /* Alinea el texto a la izquierda */
+        }
+
+        .crypto-address {
+            font-family: monospace;
+            font-size: 0.7rem; /* Aumenta un poco el tamaño de la fuente */
+            background: white;
+            padding: 0.75rem; /* Aumenta el padding */
+            border-radius: 4px;
+            overflow-x: auto;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            color: var(--text-color);
+        }
+
+        .crypto-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .crypto-icon {
+            width: 16px;
+            height: 16px;
+            margin-left: 0.5rem;
+        }
+
+        .copy-success {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #333;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            animation: fadeInOut 2s forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translate(-50%, 20px); }
+            15% { opacity: 1; transform: translate(-50%, 0); }
+            85% { opacity: 1; transform: translate(-50%, 0); }
+            100% { opacity: 0; transform: translate(-50%, -20px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .link {
+                transition: none;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background: rgba(0, 0, 0, 0.9);
+            }
+            body {
+                color: #fff;
+            }
+            h1, .profile p {
+                color: #fff;
+            }
+            .crypto-card {
+                background: #222;
+            }
+            .crypto-address {
+                background: #333;
+                color: #fff;
+                border-color: #444;
+            }
+            .crypto-label {
+                color: #fff;
+            }
+            .payment-section {
+                color: #fff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="profile">
+            <img src="Rick Sanchez.jpg" alt="Foto de perfil de RRick Sanchez" loading="lazy">
+            <p>@RRickSanchez</p>
+        </div>
+
+        
+        <nav class="links">
+            <a href="https://t.me/RRickSanchez" class="link" target="_blank" rel="noopener noreferrer">
+                Telegram
+            </a>
+            <a href="https://x.com/RRckSanchez" class="link" target="_blank" rel="noopener noreferrer">
+                Twitter
+            </a>
+            <a href="https://t.me/Apuntes2140" class="link" target="_blank" rel="noopener noreferrer">
+                Apuntes
+            </a>
+        </nav>
+
+        <section class="payment-section">
+            <p> Si mi ayuda te fue útil, aquí tienes la opción de corresponderme. </p>
+            
+            <div class="crypto-grid">
+                <div class="crypto-card">
+                    <div class="crypto-label">ETH</div>
+                    <div class="crypto-address" onclick="copyToClipboard('0x93b6B4a8F475F462dE2925c1753e232741F15605', 'ETH')">
+                        0x93b6B4a8F475F462dE2925c1753e232741F15605
+                    </div>
+                </div>
+                
+                <div class="crypto-card">
+                    <div class="crypto-label">BTC</div>
+                    <div class="crypto-address" onclick="copyToClipboard('bc1p558erzwa3n36x6pnp4yvgcaauzsahz39rg0f7plu9s5wg0jyrgns53zgme', 'BTC')">
+                        bc1p558erzwa3n36x6pnp4yvgcaauzsahz39rg0f7plu9s5wg0jyrgns53zgme
+                    </div>
+                </div>
+
+                <div class="crypto-card">
+                    <a href="https://ricksanchez.fkey.id" class="crypto-link" target="_blank" rel="noopener noreferrer">
+                        <div class="crypto-label">
+                            Envío con privacidad
+                            <svg class="crypto-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+                        <div class="crypto-address">
+                            https://ricksanchez.fkey.id
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function copyToClipboard(text, type) {
+            navigator.clipboard.writeText(text).then(() => {
+                const message = document.createElement('div');
+                message.className = 'copy-success';
+                message.textContent = `Dirección ${type} copiada`;
+                document.body.appendChild(message);
+
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+                alert('No se pudo copiar al portapapeles. Por favor, copia manualmente.');
+            });
+        }
+    </script>
+</body>
+</html>
