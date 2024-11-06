@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada</title>
+  <style>
+    /* Estilos base */
+    body, html {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+    
+    /* Tema claro (día) */
+    .day-theme {
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    /* Tema oscuro (noche) */
+    .night-theme {
+      background-color: #1a1a1a;
+      color: #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>404</h1>
+    <p>Oops... ¡Página no encontrada!</p>
+    <a href="/">Volver al inicio</a>
+  </div>
+
+  <script>
+    // Detecta la hora del día
+    const hour = new Date().getHours();
+    const isDay = hour >= 6 && hour < 18; // Día: entre las 6:00 y las 18:00
+    document.body.classList.add(isDay ? 'day-theme' : 'night-theme');
+  </script>
+</body>
+</html>
